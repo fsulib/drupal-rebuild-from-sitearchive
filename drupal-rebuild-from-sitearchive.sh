@@ -28,20 +28,20 @@ CURDIR=`pwd`
 
 echo
 echo  "Refreshing $TMPDIR..."
-#rm -rf $TMPDIR
-#mkdir $TMPDIR
+rm -rf $TMPDIR
+mkdir $TMPDIR
 
 echo "Copying $1 to $TMPDIR..."
-#cp $1 $TMPDIR
+cp $1 $TMPDIR
 
 echo "Unpacking $SITEARCHIVE..."
-#cd $TMPDIR; tar -xzf "$TMPDIR/$SITEARCHIVE"
+cd $TMPDIR; tar -xzf "$TMPDIR/$SITEARCHIVE"
 
 echo "Preserving site-specific assets (.htaccess, settings.php)..."
-#cp /var/www/html/.htaccess "$TMPDIR/.htaccess"
-#cp /var/www/html/sites/default/settings.php "$TMPDIR/default.settings.php"
-#cp /var/www/html/sites/ilsecolo.lib.fsu.edu/settings.php "$TMPDIR/ilsecolo.settings.php"
-#cp /var/www/html/sites/openaccess.fsu.edu/settings.php "$TMPDIR/openaccess.settings.php"
+cp /var/www/html/.htaccess "$TMPDIR/.htaccess"
+cp /var/www/html/sites/default/settings.php "$TMPDIR/default.settings.php"
+cp /var/www/html/sites/ilsecolo.lib.fsu.edu/settings.php "$TMPDIR/ilsecolo.settings.php"
+cp /var/www/html/sites/openaccess.fsu.edu/settings.php "$TMPDIR/openaccess.settings.php"
 
 echo "Resetting filesystem..."
 NEWROOT="$TMPDIR/home/backrest/restore/${SITEARCHIVE%%.*}/drupal"
